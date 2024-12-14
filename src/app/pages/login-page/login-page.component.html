@@ -1,14 +1,24 @@
-<form action="" class="login-form">
+<form class="login-form" [formGroup]="form" (ngSubmit)="onSubmit()">
   <h1 class="h1 mb60">Login</h1>
 
   <label class="tt-control-lable mb16">
     Username
-    <input type="text" placeholder="Enter your login" class="tt-input" />
+    <input
+      formControlName="username"
+      type="text"
+      placeholder="Enter your login"
+      class="tt-input"
+    />
   </label>
   <label class="tt-control-lable mb32">
     Password
-    <input type="text" placeholder="Enter your password" class="tt-input" />
+    <input
+      formControlName="password"
+      type="text"
+      placeholder="Enter your password"
+      class="tt-input"
+    />
   </label>
-  <button class="btn btn-shadow">Login</button>
+  <button type="submit" class="btn btn-shadow">Login</button>
 </form>
 <img src="/assets/svg/logo-tik-talk.svg" alt="logo-tik-talk" />
