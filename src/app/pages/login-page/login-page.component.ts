@@ -15,7 +15,7 @@ import { Router } from '@angular/router';
   styleUrl: './login-page.component.scss',
 })
 export class LoginPageComponent {
-  authServise = inject(AuthService);
+  authService = inject(AuthService);
   router = inject(Router);
 
   form = new FormGroup({
@@ -25,9 +25,8 @@ export class LoginPageComponent {
   onSubmit() {
     if (this.form.valid) {
       //@ts-ignore  TODO:CREATE FORM TYPE
-      this.authServise.login(this.form.value).subscribe((res) => {
+      this.authService.login(this.form.value).subscribe((res) => {
         this.router.navigate(['']);
-        console.log(res);
       });
     }
   }
