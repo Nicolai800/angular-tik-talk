@@ -7,6 +7,7 @@ import {
 } from '@angular/forms';
 import { AuthService } from '../../auth/auth.service';
 import { Router } from '@angular/router';
+import { LoginForm } from '../../data/interfaces/login-form.interface.ts';
 
 @Component({
   selector: 'app-login-page',
@@ -21,13 +22,13 @@ export class LoginPageComponent {
   isPasswordVisible = signal<boolean>(false);
 
   form = new FormGroup({
-    username: new FormControl(null, Validators.required),
-    password: new FormControl(null, Validators.required),
+    username: new FormControl('', Validators.required),
+    password: new FormControl('', Validators.required),
   });
   onSubmit() {
     if (this.form.valid) {
-      //@ts-ignore  TODO:CREATE FORM TYPE
-      this.authService.login(this.form.value).subscribe((res) => {
+      const formValue = this.form.value as LoginForm;
+      this.authService.login(formValue).subscribe((res) => {
         this.router.navigate(['']);
       });
     }
