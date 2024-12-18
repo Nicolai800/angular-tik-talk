@@ -1,5 +1,8 @@
 :host {
+  display: block;
   padding: 20px 12px;
+  position: relative;
+  background: var(--dark-color);
 }
 
 .main-menu-list {
@@ -35,7 +38,54 @@
   }
 }
 
+.sidebar__footer {
+  background: var(--dark-hover-color);
+  width: calc(100% - 20px);
+  border-radius: 2px;
+  padding: 4px 16px;
+  display: grid;
+  grid-template-columns: 32px 1fr 16px;
+  gap: 12px;
+  align-items: center;
+  position: absolute;
+  bottom: 20px;
+}
+
+.sidebar__footer-img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.sidebar__footer-username__text {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
 .menu-item-svg {
   width: 16px;
   height: 16px;
+}
+
+.to-subscribers {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.to-subscribers-link {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+.to-subscribers-icon {
+  width: 18px;
+  height: 18px;
+  color: var(--primary-color);
+}
+
+.sidebar__footer__settings-btn {
+  width: 16px;
+  height: 16px;
+  color: var(--primary-color);
 }
