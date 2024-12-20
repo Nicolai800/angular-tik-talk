@@ -1,5 +1,5 @@
 export interface Profile {
-  id: 123;
+  id: number;
   username: string;
   avatarUrl: string | null;
   subscribersAmount: number;

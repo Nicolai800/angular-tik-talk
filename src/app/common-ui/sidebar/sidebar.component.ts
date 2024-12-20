@@ -32,7 +32,7 @@ export class SidebarComponent {
     {
       label: 'Home Page',
       icon: 'homePage',
-      link: '',
+      link: 'profile/me',
     },
     {
       label: 'Chats',
