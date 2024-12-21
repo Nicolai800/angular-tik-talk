@@ -39,6 +39,11 @@
   }
 }
 
+.menu-item.active {
+  background-color: var(--dark-hover-color);
+  color: var(--primary-color);
+}
+
 .sidebar__footer {
   background: var(--dark-hover-color);
   width: calc(100% - 20px);

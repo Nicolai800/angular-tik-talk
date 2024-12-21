@@ -1,0 +1,16 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.not-found {
+  text-align: center;
+}
+
+.home-link {
+  text-decoration: none;
+  color: var(--light-color);
+}

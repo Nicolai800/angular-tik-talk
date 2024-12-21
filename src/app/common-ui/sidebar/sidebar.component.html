@@ -5,14 +5,16 @@
 />
 <nav class="mb20">
   <ul class="main-menu-list">
-    @for (menuItem of menuItems; track $index) {
-    <li>
-      <a class="menu-item" [routerLink]="[menuItem.link]">
+    <li *ngFor="let menuItem of menuItems">
+      <a
+        class="menu-item"
+        [routerLink]="[menuItem.link]"
+        routerLinkActive="active"
+      >
         <svg [icon]="menuItem.icon" class="menu-item-svg"></svg>
         <span>{{ menuItem.label }}</span>
       </a>
     </li>
-    }
   </ul>
 </nav>
 

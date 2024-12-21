@@ -11,6 +11,7 @@ import {
   switchMap,
   throwError,
   filter,
+  tap,
 } from 'rxjs';
 
 let isRefreshing$ = new BehaviorSubject<boolean>(false);
@@ -43,8 +44,9 @@ const refreshAndProceed = (
     isRefreshing$.next(true);
     return authService.refreshAuthToken().pipe(
       switchMap((res) => {
-        isRefreshing$.next(false);
-        return next(addToken(req, res.access_token));
+        return next(addToken(req, res.access_token)).pipe(
+          tap(() => isRefreshing$.next(false))
+        );
       })
     );
   }
