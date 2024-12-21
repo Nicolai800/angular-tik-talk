@@ -28,5 +28,6 @@ export class AvatarUploadComponent {
       this.prewiew.set(event.target?.result?.toString() ?? '');
     };
     reader.readAsDataURL(file);
+    this.avatar = file;
   }
 }
