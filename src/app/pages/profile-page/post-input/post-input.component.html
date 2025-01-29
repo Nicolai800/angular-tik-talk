@@ -1,1 +1,7 @@
-<p>post-input in process!</p>
+@if(profile(); as profile){
+<app-avarat-circle
+  class="size32"
+  [avatarUrl]="profile.avatarUrl"
+></app-avarat-circle>
+}
+<textarea class="hidden-textarea" (input)="onTextAreaInput($event)"></textarea>

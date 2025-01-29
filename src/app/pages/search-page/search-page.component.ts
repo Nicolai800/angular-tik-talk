@@ -11,12 +11,7 @@ import { ProfileFiltersComponent } from './profile-filters/profile-filters.compo
   styleUrl: './search-page.component.scss',
 })
 export class SearchPageComponent {
-  title = 'tik-talk';
   profileService = inject(ProfileService);
-  profiles: Profile[] = [];
-  constructor() {
-    this.profileService
-      .getTestAccounts()
-      .subscribe((val) => (this.profiles = val));
-  }
+  profiles = this.profileService.filteredProfiles;
+  
 }
