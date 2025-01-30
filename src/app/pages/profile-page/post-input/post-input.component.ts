@@ -1,10 +1,11 @@
 import { Component, inject, Renderer2 } from '@angular/core';
 import { AvaratCircleComponent } from '../../../common-ui/avarat-circle/avarat-circle.component';
 import { ProfileService } from '../../../data/services/profile.service';
+import { SvgIconComponent } from '../../../common-ui/svg-icon/svg-icon.component';
 
 @Component({
   selector: 'app-post-input',
-  imports: [AvaratCircleComponent],
+  imports: [AvaratCircleComponent, SvgIconComponent],
   templateUrl: './post-input.component.html',
   styleUrl: './post-input.component.scss',
 })
