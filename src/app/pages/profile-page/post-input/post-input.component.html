@@ -4,7 +4,11 @@
   [avatarUrl]="profile.avatarUrl"
 ></app-avarat-circle>
 }
-<textarea class="hidden-textarea" (input)="onTextAreaInput($event)"></textarea>
-<button class="btn-icon">
+<textarea
+  [(ngModel)]="postText"
+  class="hidden-textarea"
+  (input)="onTextAreaInput($event)"
+></textarea>
+<button class="btn-icon" (click)="onCreatePost()">
   <svg icon="send-message" class="svg16"></svg>
 </button>
