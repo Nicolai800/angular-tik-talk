@@ -1,4 +1,4 @@
-import { Component, inject, Renderer2 } from '@angular/core';
+import { Component, inject, input, Renderer2 } from '@angular/core';
 import { AvaratCircleComponent } from '../../../common-ui/avarat-circle/avarat-circle.component';
 import { ProfileService } from '../../../data/services/profile.service';
 import { SvgIconComponent } from '../../../common-ui/svg-icon/svg-icon.component';
@@ -13,6 +13,8 @@ import { firstValueFrom } from 'rxjs';
   styleUrl: './post-input.component.scss',
 })
 export class PostInputComponent {
+  isCommentInput = input(false);
+  postId = input<number>(0);
   profile = inject(ProfileService).me;
   r2 = inject(Renderer2);
   postService = inject(PostService);
@@ -28,6 +30,16 @@ export class PostInputComponent {
 
   onCreatePost() {
     if (!this.postText) return;
+    if (this.isCommentInput()) {
+      firstValueFrom(
+        this.postService.createComment({
+          text: this.postText,
+          authorId: this.profile()!.id,
+          postId: this.postId(),
+        })
+      ).then(() => (this.postText = ''));
+      return;
+    }
     firstValueFrom(
       this.postService.createPost({
         title: 'New post',
