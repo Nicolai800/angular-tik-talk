@@ -1,1 +1,18 @@
-<p>{{ post()?.content }}</p>
+@if(post(); as post){
+<app-avarat-circle
+  class="size32"
+  [avatarUrl]="post.author.avatarUrl"
+></app-avarat-circle>
+
+<main class="post-body">
+  <div class="post-header">
+    <strong class="post__author"
+      >{{ post.author.firstName }} {{ post.author.lastName }}
+      <span class="post-created-at">{{
+        post.createdAt | date : "HH:mm dd.MM.yyyy"
+      }}</span></strong
+    >
+  </div>
+  <p class="medium-text">{{ post.content }}</p>
+</main>
+}
