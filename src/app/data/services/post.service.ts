@@ -6,7 +6,7 @@ import {
   CommentCreateDto,
   Comment,
 } from '../interfaces/post.interface';
-import { switchMap, tap } from 'rxjs';
+import { map, switchMap, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -33,5 +33,11 @@ export class PostService {
 
   createComment(payload: CommentCreateDto) {
     return this.#http.post<Comment>(`${this.baseApiUrl}comment/`, payload);
+  }
+
+  getCommentsByPostId(postId: number) {
+    return this.#http
+      .get<Post>(`${this.baseApiUrl}post/${postId}`)
+      .pipe(map((post) => post.comments));
   }
 }
