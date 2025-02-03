@@ -1,4 +1,10 @@
-import { Component, inject, input, Renderer2 } from '@angular/core';
+import {
+  Component,
+  HostBinding,
+  inject,
+  input,
+  Renderer2,
+} from '@angular/core';
 import { AvaratCircleComponent } from '../../../common-ui/avarat-circle/avarat-circle.component';
 import { ProfileService } from '../../../data/services/profile.service';
 import { SvgIconComponent } from '../../../common-ui/svg-icon/svg-icon.component';
@@ -18,6 +24,11 @@ export class PostInputComponent {
   profile = inject(ProfileService).me;
   r2 = inject(Renderer2);
   postService = inject(PostService);
+
+  @HostBinding('class.comment')
+  get isComment() {
+    return this.isCommentInput();
+  }
 
   postText = '';
 

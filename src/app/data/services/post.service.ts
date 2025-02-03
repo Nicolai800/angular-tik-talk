@@ -4,6 +4,7 @@ import {
   PostCreateDto,
   Post,
   CommentCreateDto,
+  Comment,
 } from '../interfaces/post.interface';
 import { switchMap, tap } from 'rxjs';
 

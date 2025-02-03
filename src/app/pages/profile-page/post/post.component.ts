@@ -4,6 +4,7 @@ import { AvaratCircleComponent } from '../../../common-ui/avarat-circle/avarat-c
 import { CommonModule } from '@angular/common';
 import { SvgIconComponent } from '../../../common-ui/svg-icon/svg-icon.component';
 import { PostInputComponent } from '../post-input/post-input.component';
+import { CommentComponent } from './comment/comment.component';
 
 @Component({
   selector: 'app-post',
@@ -12,6 +13,7 @@ import { PostInputComponent } from '../post-input/post-input.component';
     CommonModule,
     SvgIconComponent,
     PostInputComponent,
+    CommentComponent,
   ],
   templateUrl: './post.component.html',
   styleUrl: './post.component.scss',

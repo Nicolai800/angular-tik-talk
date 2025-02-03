@@ -36,3 +36,10 @@
   font-weight: 700;
   line-height: 16px;
 }
+
+.post__comments-wrapper {
+  max-height: 150px;
+  overflow-y: scroll;
+  display: grid;
+  gap: 8px;
+}
