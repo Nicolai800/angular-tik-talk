@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Comment } from '../../../../data/interfaces/post.interface';
+import { PostComment } from '../../../../data/interfaces/post.interface';
 import { AvaratCircleComponent } from '../../../../common-ui/avarat-circle/avarat-circle.component';
 
 @Component({
@@ -10,5 +10,5 @@ import { AvaratCircleComponent } from '../../../../common-ui/avarat-circle/avara
   styleUrl: './comment.component.scss',
 })
 export class CommentComponent {
-  comment = input<Comment>();
+  comment = input<PostComment>();
 }

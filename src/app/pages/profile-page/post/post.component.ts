@@ -1,5 +1,5 @@
 import { Component, inject, input, signal } from '@angular/core';
-import { Comment, Post } from '../../../data/interfaces/post.interface';
+import { PostComment, Post } from '../../../data/interfaces/post.interface';
 import { AvaratCircleComponent } from '../../../common-ui/avarat-circle/avarat-circle.component';
 import { CommonModule } from '@angular/common';
 import { SvgIconComponent } from '../../../common-ui/svg-icon/svg-icon.component';
@@ -22,13 +22,17 @@ import { firstValueFrom } from 'rxjs';
 })
 export class PostComponent {
   post = input<Post>();
-  comment = signal<Comment[]>([]);
+  comments = signal<PostComment[]>([]);
   postService = inject(PostService);
 
   async ngOnInt() {
+    this.comments.set(this.post()!.comments);
+  }
+
+  async onCreated() {
     const comments = await firstValueFrom(
       this.postService.getCommentsByPostId(this.post()!.id)
     );
-    this.comment.set(comments);
+    this.comments.set(comments);
   }
 }

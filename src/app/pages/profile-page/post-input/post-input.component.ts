@@ -1,8 +1,10 @@
 import {
   Component,
+  EventEmitter,
   HostBinding,
   inject,
   input,
+  Output,
   Renderer2,
 } from '@angular/core';
 import { AvaratCircleComponent } from '../../../common-ui/avarat-circle/avarat-circle.component';
@@ -24,6 +26,8 @@ export class PostInputComponent {
   profile = inject(ProfileService).me;
   r2 = inject(Renderer2);
   postService = inject(PostService);
+
+  @Output() created = new EventEmitter();
 
   @HostBinding('class.comment')
   get isComment() {
@@ -48,7 +52,10 @@ export class PostInputComponent {
           authorId: this.profile()!.id,
           postId: this.postId(),
         })
-      ).then(() => (this.postText = ''));
+      ).then(() => {
+        this.postText = '';
+        this.created.emit();
+      });
       return;
     }
     firstValueFrom(

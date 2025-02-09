@@ -4,7 +4,7 @@ import {
   PostCreateDto,
   Post,
   CommentCreateDto,
-  Comment,
+  PostComment,
 } from '../interfaces/post.interface';
 import { map, switchMap, tap } from 'rxjs';
 
@@ -32,7 +32,7 @@ export class PostService {
   }
 
   createComment(payload: CommentCreateDto) {
-    return this.#http.post<Comment>(`${this.baseApiUrl}comment/`, payload);
+    return this.#http.post<PostComment>(`${this.baseApiUrl}comment/`, payload);
   }
 
   getCommentsByPostId(postId: number) {

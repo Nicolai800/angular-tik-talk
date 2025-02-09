@@ -19,14 +19,18 @@
     <span class="comment-amount">
       <svg icon="comment" class="svg16"></svg>
 
-      <span class="comments-length">{{ post.comments.length }}</span></span
+      <span class="comments-length">{{ comments().length }}</span></span
     >
   </div>
   <div class="post__comments-wrapper">
-    @for( comment of post.comments; track comment.id){
+    @for( comment of comments(); track comment.id){
     <app-comment [comment]="comment"></app-comment>
     }
   </div>
-  <app-post-input [isCommentInput]="true" [postId]="post.id"></app-post-input>
+  <app-post-input
+    [isCommentInput]="true"
+    [postId]="post.id"
+    (created)="onCreated()"
+  ></app-post-input>
 </main>
 }
