@@ -25,7 +25,7 @@ export class PostComponent {
   comments = signal<PostComment[]>([]);
   postService = inject(PostService);
 
-  async ngOnInt() {
+  ngOnInit() {
     this.comments.set(this.post()!.comments);
   }
 
