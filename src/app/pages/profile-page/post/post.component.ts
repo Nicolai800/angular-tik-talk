@@ -7,6 +7,7 @@ import { PostInputComponent } from '../post-input/post-input.component';
 import { CommentComponent } from './comment/comment.component';
 import { PostService } from '../../../data/services/post.service';
 import { firstValueFrom } from 'rxjs';
+import { TimeTransformPipe } from '../../../helpers/pipes/time-transform.pipe';
 
 @Component({
   selector: 'app-post',
@@ -16,6 +17,7 @@ import { firstValueFrom } from 'rxjs';
     SvgIconComponent,
     PostInputComponent,
     CommentComponent,
+    TimeTransformPipe,
   ],
   templateUrl: './post.component.html',
   styleUrl: './post.component.scss',

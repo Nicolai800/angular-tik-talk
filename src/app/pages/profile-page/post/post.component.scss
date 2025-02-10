@@ -41,11 +41,7 @@
   padding: 8px 0;
   max-height: 150px;
   overflow-y: scroll;
-  scrollbar-width: none; /* Firefox */
+  scrollbar-width: none;
   display: grid;
   gap: 8px;
-}
-
-.post__comments-wrapper::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Edge */
 }

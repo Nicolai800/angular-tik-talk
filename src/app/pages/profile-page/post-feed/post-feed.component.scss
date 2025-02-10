@@ -1,4 +1,7 @@
 :host {
   display: grid;
   gap: 16px;
+  height: 85dvh;
+  overflow-y: scroll;
+  scrollbar-width: none;
 }
