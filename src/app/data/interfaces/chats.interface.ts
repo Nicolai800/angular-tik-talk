@@ -16,3 +16,9 @@ export interface Message {
   isRead: boolean;
   updatedAt: string;
 }
+
+export interface LastMessageRes {
+  id: number;
+  userFrom: Profile;
+  message: string;
+}

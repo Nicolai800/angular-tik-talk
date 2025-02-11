@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { AvaratCircleComponent } from '../../../common-ui/avarat-circle/avarat-circle.component';
+import { Chat, LastMessageRes } from '../../../data/interfaces/chats.interface';
 
 @Component({
   selector: 'button[chats]',
@@ -7,4 +8,6 @@ import { AvaratCircleComponent } from '../../../common-ui/avarat-circle/avarat-c
   templateUrl: './chats-btn.component.html',
   styleUrl: './chats-btn.component.scss',
 })
-export class ChatsBtnComponent {}
+export class ChatsBtnComponent {
+  chat = input<LastMessageRes>();
+}

@@ -11,12 +11,14 @@
 .hidden-textarea {
   resize: none;
   border: none;
+  border-bottom: 1px solid var(--light-color);
   background: var(--dark-color);
   color: var(--light-color);
 
   &:hover,
   &:focus-visible {
     outline: 1px solid var(--primary-color);
+    border: none;
   }
 }
 

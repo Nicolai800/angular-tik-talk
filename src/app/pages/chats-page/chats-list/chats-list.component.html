@@ -3,5 +3,6 @@
     <input type="text" class="tt-form-input" placeholder="Search" />
   </label>
 </div>
-
-<button chats></button>
+@for(chat of chats$ | async; track chat.id){
+<button chats [chat]="chat"></button>
+}

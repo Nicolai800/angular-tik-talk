@@ -1,5 +1,8 @@
-<app-avarat-circle></app-avarat-circle>
+@if(chat(); as chat){
+<app-avarat-circle class="size32" [avatarUrl]="chat.userFrom.avatarUrl">
+</app-avarat-circle>
 
 <div class="last-message__wrapper">
-  <div class="medium-text"></div>
+  <div class="medium-text">{{ chat.message }}</div>
 </div>
+}
