@@ -23,10 +23,10 @@ export interface PostComment {
   id: number;
   text: string;
   author: {
-    id: 0;
+    id: number;
     username: string;
     avatarUrl: string;
-    subscribersAmount: 0;
+    subscribersAmount: number;
   };
   postId: number;
   commentId: number;

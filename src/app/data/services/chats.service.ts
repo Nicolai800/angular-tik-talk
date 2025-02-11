@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
+import { Chat } from '../interfaces/chats.interface';
 
 @Injectable({ providedIn: 'root' })
 export class ChatsServise {
@@ -9,15 +10,15 @@ export class ChatsServise {
   messageUrl = `${this.baseUrl}message/`;
 
   createChat(userId: number) {
-    return this.http.post(`${this.chatsUrl}${userId}`, {});
+    return this.http.post<Chat>(`${this.chatsUrl}${userId}`, {});
   }
 
   getMyChats() {
-    return this.http.get(`${this.chatsUrl}get_my_chats/`);
+    return this.http.get<Chat[]>(`${this.chatsUrl}get_my_chats/`);
   }
 
   getChatById(chatId: number) {
-    return this.http.get(`${this.chatsUrl}${chatId}`);
+    return this.http.get<Chat>(`${this.chatsUrl}${chatId}`);
   }
 
   sendMessage(chatId: number, message: string) {
