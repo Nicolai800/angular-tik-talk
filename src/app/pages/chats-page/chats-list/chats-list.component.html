@@ -1,8 +1,18 @@
 <div class="chats-filters-input__wrapper">
   <label class="tt-form-label">
-    <input type="text" class="tt-form-input" placeholder="Search" />
+    <input
+      type="text"
+      class="tt-form-input"
+      placeholder="Search"
+      [formControl]="filterChatsControl"
+    />
   </label>
 </div>
 @for(chat of chats$ | async; track chat.id){
-<button chats [chat]="chat"></button>
+<button
+  chats
+  [chat]="chat"
+  [routerLink]="[chat.id]"
+  routerLinkActive="active"
+></button>
 }

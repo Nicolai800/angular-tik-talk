@@ -5,6 +5,7 @@ export interface Chat {
   userFirst: Profile;
   userSecond: Profile;
   messages: Message[];
+  companion: Profile;
 }
 
 export interface Message {
@@ -20,5 +21,5 @@ export interface Message {
 export interface LastMessageRes {
   id: number;
   userFrom: Profile;
-  message: string;
+  message: string | null;
 }

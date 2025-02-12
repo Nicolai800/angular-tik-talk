@@ -1,1 +1,9 @@
-<p>header works!</p>
+@if(profile(); as profile){
+<div class="companion-wrapper">
+  <app-avarat-circle
+    [avatarUrl]="profile.avatarUrl"
+    class="size32"
+  ></app-avarat-circle>
+  <div class="subtitle">{{ profile.firstName }} {{ profile.lastName }}</div>
+</div>
+}
