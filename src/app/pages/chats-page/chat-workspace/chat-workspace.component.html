@@ -1,4 +1,4 @@
 @if(activeChat$ | async; as chat){
 <app-header [profile]="chat.companion"></app-header>
-<app-messages-wrapper></app-messages-wrapper>
+<app-messages-wrapper [chat]="chat"></app-messages-wrapper>
 }
