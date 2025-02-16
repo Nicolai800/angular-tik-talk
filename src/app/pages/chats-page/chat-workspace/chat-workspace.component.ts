@@ -1,7 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { HeaderComponent } from './header/header.component';
 import { MessagesWrapperComponent } from './messages-wrapper/messages-wrapper.component';
-import { MessageInputComponent } from '../../../common-ui/message-input/message-input.component';
 import { ActivatedRoute } from '@angular/router';
 import { ChatsServise } from '../../../data/services/chats.service';
 import { switchMap } from 'rxjs';
@@ -9,12 +8,7 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-chat-workspace',
-  imports: [
-    HeaderComponent,
-    MessagesWrapperComponent,
-    MessageInputComponent,
-    CommonModule,
-  ],
+  imports: [HeaderComponent, MessagesWrapperComponent, CommonModule],
   templateUrl: './chat-workspace.component.html',
   styleUrl: './chat-workspace.component.scss',
 })
