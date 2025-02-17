@@ -29,6 +29,15 @@ export class ChatsServise {
             chat.userFirst.id === this.me()?.id
               ? chat.userSecond
               : chat.userFirst,
+          messages: chat.messages.map((message) => {
+            return {
+              ...message,
+              user:
+                chat.userFirst.id === message.userFromId
+                  ? chat.userFirst
+                  : chat.userSecond,
+            };
+          }),
         };
       })
     );

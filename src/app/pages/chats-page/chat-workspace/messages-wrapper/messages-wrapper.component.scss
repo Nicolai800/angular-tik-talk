@@ -3,3 +3,8 @@
   padding: 16px 20px;
   grid-template-rows: 1fr min-content;
 }
+
+.messages-wrapper {
+  display: flex;
+  gap: 20px;
+}
