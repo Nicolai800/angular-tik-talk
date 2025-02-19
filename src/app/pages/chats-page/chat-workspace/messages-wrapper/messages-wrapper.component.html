@@ -1,8 +1,8 @@
-@for(message of messages(); track message.id) {
 <div class="messages-wrapper">
+  @for(message of messages(); track message.id) {
+
   <app-message [message]="message"> </app-message>
+
+  }
 </div>
-
-}
-
 <app-message-input (created)="onSendMessage($event)"></app-message-input>

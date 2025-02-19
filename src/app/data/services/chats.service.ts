@@ -36,6 +36,7 @@ export class ChatsServise {
                 chat.userFirst.id === message.userFromId
                   ? chat.userFirst
                   : chat.userSecond,
+              isMine: message.userFromId === this.me()!.id,
             };
           }),
         };

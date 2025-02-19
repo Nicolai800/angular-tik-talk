@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, HostBinding, input } from '@angular/core';
 import { Message } from '../../../../data/interfaces/chats.interface';
 import { AvaratCircleComponent } from '../../../../common-ui/avarat-circle/avarat-circle.component';
 import { CommonModule } from '@angular/common';
@@ -11,4 +11,9 @@ import { CommonModule } from '@angular/common';
 })
 export class MessageComponent {
   message = input.required<Message>();
+
+  @HostBinding('class.is-mine')
+  get isMine() {
+    return this.message().isMine;
+  }
 }
