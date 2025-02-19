@@ -16,19 +16,12 @@ export class MessagesWrapperComponent {
 
   chat = input.required<Chat>();
 
-  messages = signal<Message[]>([]);
-
-  ngOnInit() {
-    this.messages.set(this.chat().messages);
-  }
+  messages = this.chatsServise.activeChatMessage;
 
   async onSendMessage(messageText: string) {
     await firstValueFrom(
       this.chatsServise.sendMessage(this.chat().id, messageText)
     );
-    const chat = await firstValueFrom(
-      this.chatsServise.getChatById(this.chat().id)
-    );
-    this.messages.set(chat.messages);
+    await firstValueFrom(this.chatsServise.getChatById(this.chat().id));
   }
 }
