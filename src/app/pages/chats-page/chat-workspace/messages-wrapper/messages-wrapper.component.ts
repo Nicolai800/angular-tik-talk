@@ -1,4 +1,4 @@
-import { Component, inject, input, signal } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { MessageComponent } from '../message/message.component';
 import { MessageInputComponent } from '../../../../common-ui/message-input/message-input.component';
 import { ChatsServise } from '../../../../data/services/chats.service';

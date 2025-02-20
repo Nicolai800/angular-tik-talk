@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable, signal } from '@angular/core';
 import { Profile } from '../interfaces/profile.interface';
 import { Pageble } from '../interfaces/pageble.interface';
-import { map, tap } from 'rxjs/operators';
+import { finalize, map, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -13,6 +13,8 @@ export class ProfileService {
 
   me = signal<Profile | null>(null);
   filteredProfiles = signal<Profile[]>([]);
+
+  isLoading = signal<boolean>(true);
 
   getTestAccounts() {
     return this.http.get<Profile[]>(`${this.baseApiUrl}account/test_accounts`);
@@ -48,8 +50,12 @@ export class ProfileService {
   }
 
   filterProfiles(params: Record<string, any>) {
+    this.isLoading.set(true);
     return this.http
       .get<Pageble<Profile>>(`${this.baseApiUrl}account/accounts`, { params })
-      .pipe(tap((res) => this.filteredProfiles.set(res.items)));
+      .pipe(
+        tap((res) => this.filteredProfiles.set(res.items)),
+        finalize(() => this.isLoading.set(false))
+      );
   }
 }
