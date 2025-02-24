@@ -1,0 +1,22 @@
+
+ NX   ЁЯР│ Nx initialization
+
+
+ NX   ЁЯзСтАНЁЯФз Please answer the following questions about the scripts found in your package.json in order to generate task runner configuration
+
+[?25l[36m?[39m [1mWhich of the following scripts are cacheable? (Produce the same output given the same input, e.g. build, test and lint usually are, serve and start are not). You can use spacebar to select one or more scripts.[22m [2m...[22m 
+[2m[90mтИЪ[39m[22m [36m[4mng[24m[39m
+[2m[90mтИЪ[39m[22m start
+[2m[90mтИЪ[39m[22m build
+[2m[90mтИЪ[39m[22m watch
+[2m[90mтИЪ[39m[22m test[5A[217G[5B[2K[F[2K[F[2K[F[2K[F[2K[F[2K[F[2K[F[2K[1G[32mтИЪ[39m [1mWhich of the following scripts are cacheable? (Produce the same output given the same input, e.g. build, test and lint usually are, serve and start are not). You can use spacebar to select one or more scripts.[22m [2m┬╖[22m [35mNo items were selected[39m[21D[5B[2K[F[2K[F[2K[1G[32mтИЪ[39m [1mWhich of the following scripts are cacheable? (Produce the same output given the same input, e.g. build, test and lint usually are, serve and start are not). You can use spacebar to select one or more scripts.[22m [2m┬╖[22m [35mNo items were selected[39m[21D
+
+
+[3B
+
+
+
+ NX   ЁЯУж Installing dependencies
+
+Завершить выполнение пакетного файла [Y(да)/N(нет)]? 
+[?25hЗавершить выполнение пакетного файла [Y(да)/N(нет)]? 
